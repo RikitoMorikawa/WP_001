@@ -16,23 +16,32 @@ assets/
   student-girl.png    … 女子学生イラスト（佐藤・山田さんに使用）
 wp-source/
   templates/
-    home.html         … トップ（固定ヘッダー＋黄色ヒーロー＋白カード一覧）
+    home.html         … トップ（固定ヘッダー＋黄色ヒーロー＋動的クエリループのカード一覧）
     single.html       … 記事詳細（メタ情報・コメント欄なし／固定ヘッダー）
   parts/
-    header.html       … 参考用ヘッダー（実際は home/single にインライン configで固定）
-    footer.html       … フッター（黄色・サイト名＋コピーライト）
+    header.html       … 参考用ヘッダー（実際は home/single にインライン configで固定・枠線なし）
+    footer.html       … フッター（黄色・サイト名＋コピーライト・枠線なし）
   styles/
     global-styles.json… 全体背景・リンク／ボタン色
   posts/
-    *.html            … インタビュー記事4本（wp:html インラインHTMLデザイン）
-  site.json           … サイト設定メモ
+    08-…〜25-….html   … インタビュー記事4本（wp:html インラインHTMLデザイン）
+    _TEMPLATE.html    … 貼り付け用ひな型（Custom HTML 版）
+    _TEMPLATE-blocks.html … 標準ブロック版ひな型（下書き post 61 の本文。複製 or パターン化して使用）
+  site.json           … サイト設定メモ（投稿ID・スラッグ・アイキャッチmedia ID 等）
 ```
+
+## トップ一覧の仕組み
+
+`home.html` は動的な **Query Loop**（`inherit:false` / postType post / 新しい順）。**公開した投稿は自動でカードに並ぶ**。カードのサムネイルは各投稿の**アイキャッチ画像（post-featured-image）**、説明文は**「抜粋(Excerpt)」欄**を表示する。新規投稿はアイキャッチと抜粋を設定するとカードが整う。詳細URLはスラッグを数字IDにして末尾をIDにしている（例 `/2026/07/06/8/`）。
 
 ## 画像について
 
-サイト上の学生イラストは、この GitHub リポジトリ（public）の `assets/` を
-`https://raw.githubusercontent.com/RikitoMorikawa/WP_001/main/assets/…png`
-としてホットリンク表示している。リポジトリを非公開化・削除・パス変更すると画像が表示されなくなる点に注意。正式運用時は WordPress メディアへの登録を推奨。
+学生イラストは2系統で使用している。
+
+- **記事本文内**の図：この GitHub リポジトリ（public）の `assets/*.png` を `https://raw.githubusercontent.com/RikitoMorikawa/WP_001/main/assets/…png` として**ホットリンク表示**。リポジトリを非公開化・削除・パス変更すると表示されなくなる点に注意。
+- **トップのカードのサムネイル**：同じイラストを **WordPress メディアにも登録**し（`student-boy`=ID 73 / `student-girl`=ID 74）、各投稿の**アイキャッチ画像**として設定。カードは post-featured-image でこれを表示。
+
+正式運用では本文内の画像もメディア（WordPress ホスト）に寄せると GitHub 依存がなくなる。
 
 ## メモ（プラン別の制約）
 

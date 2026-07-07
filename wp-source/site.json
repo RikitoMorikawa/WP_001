@@ -5,7 +5,7 @@
   "tagline": "寮に暮らす学生のリアルな声",
   "plan": "personal",
   "theme": "pub/twentytwentyfour",
-  "front_page": "posts (home テンプレートで最新投稿を表示)",
+  "front_page": "posts (home テンプレートの動的クエリループで最新投稿を自動表示)",
   "category": {
     "name": "インタビュー",
     "id": 11788
@@ -14,12 +14,25 @@
     "accent": "#FFD029",
     "accent_dark": "#B8860B",
     "page_background": "#FFFBEA",
-    "header_border": "#e8bf00"
+    "card_border": "#FFD029",
+    "soft_yellow": "#FFF9E0"
   },
+  "media": {
+    "student_boy_id": 73,
+    "student_girl_id": 74,
+    "note": "アイキャッチ用イラスト。カード一覧は post-featured-image で表示。"
+  },
+  "permalink_note": "簡易サイトのため /年/月/日/スラッグ/ 固定。スラッグを数字IDにしてURL末尾をIDにしている（例: /2026/07/06/8/）。",
   "posts": [
-    { "id": 8,  "title": "忙しい毎日も、寮の仲間がいれば楽しめる", "person": "田中 太郎" },
-    { "id": 23, "title": "同じフロアの友達が、毎日の支えになっている", "person": "佐藤 花子" },
-    { "id": 24, "title": "寮生活で「自立」を覚えた3年間", "person": "鈴木 健一" },
-    { "id": 25, "title": "世界中の仲間と暮らす、国際寮の毎日", "person": "山田 美咲" }
-  ]
+    { "id": 8,  "slug": "8",  "person": "田中 太郎", "gender": "male",   "featured_media": 73 },
+    { "id": 23, "slug": "23", "person": "佐藤 花子", "gender": "female", "featured_media": 74 },
+    { "id": 24, "slug": "24", "person": "鈴木 健一", "gender": "male",   "featured_media": 73 },
+    { "id": 25, "slug": "25", "person": "山田 美咲", "gender": "female", "featured_media": 74 }
+  ],
+  "template_post": {
+    "id": 61,
+    "status": "draft",
+    "title": "【ひな型】インタビュー記事（複製・パターン用）",
+    "note": "標準ブロックで組んだ雛形。複製して中身とアイキャッチ・抜粋を差し替えて公開する。ブロックマークアップは posts/_TEMPLATE-blocks.html を参照。"
+  }
 }
