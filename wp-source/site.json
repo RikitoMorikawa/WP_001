@@ -1,0 +1,25 @@
+{
+  "site_url": "studentsdormitory.wordpress.com",
+  "blog_id": 235419237,
+  "title": "学生寮インタビュー",
+  "tagline": "寮に暮らす学生のリアルな声",
+  "plan": "personal",
+  "theme": "pub/twentytwentyfour",
+  "front_page": "posts (home テンプレートで最新投稿を表示)",
+  "category": {
+    "name": "インタビュー",
+    "id": 11788
+  },
+  "colors": {
+    "accent": "#FFD029",
+    "accent_dark": "#B8860B",
+    "page_background": "#FFFBEA",
+    "header_border": "#e8bf00"
+  },
+  "posts": [
+    { "id": 8,  "title": "忙しい毎日も、寮の仲間がいれば楽しめる", "person": "田中 太郎" },
+    { "id": 23, "title": "同じフロアの友達が、毎日の支えになっている", "person": "佐藤 花子" },
+    { "id": 24, "title": "寮生活で「自立」を覚えた3年間", "person": "鈴木 健一" },
+    { "id": 25, "title": "世界中の仲間と暮らす、国際寮の毎日", "person": "山田 美咲" }
+  ]
+}

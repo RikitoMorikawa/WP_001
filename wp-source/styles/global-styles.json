@@ -1,0 +1,13 @@
+{
+  "color": {
+    "background": "#FFFBEA"
+  },
+  "elements": {
+    "link": {
+      "color": { "text": "#B8860B" }
+    },
+    "button": {
+      "color": { "background": "#FFD029", "text": "#111111" }
+    }
+  }
+}
